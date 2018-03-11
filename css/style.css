@@ -111,14 +111,19 @@ h1, h2, h3, p, a, input, textarea {
 	color: #1f2628;
 }
 
+h2 {
+	font-size: 34px;
+}
+
 #splash {
 	height: 105vh;
 	width: 100%;
-	background: url(../img/splash-bg-mobile.jpg);
+	background-image: url(../img/splash-bg-mobile.jpg);
 	background-size: cover;
+	background-repeat: no-repeat;
 	display: flex;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: center;
 }
 
 #ic1 {
@@ -127,7 +132,6 @@ h1, h2, h3, p, a, input, textarea {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: 20vh; /*This needs configuring*/
 }
 
 #ic1 h1 {
@@ -203,7 +207,6 @@ a {
 #h2mob {
 	text-align: center;
 	width: 250px;
-	font-size: 32px;
 	order: -1;
 }
 
@@ -297,8 +300,7 @@ footer p {
 	    }
 
 	    #splash {
-			background: url(../img/splash-bg-desktop.jpg);
-			align-items: center;
+			background-image: url(../img/splash-bg-desktop.jpg);
 			height: 110vh;
 
 	    }
@@ -325,13 +327,22 @@ footer p {
 
 		.cards {
 			height: auto;
-			justify-content: space-around;
+			justify-content: space-between;
 			flex-wrap: wrap;
 			flex-direction: row;
 		}
 
+		#services {
+			width: 100%;
+			text-align: left;
+		}
+
 		.card:last-of-type {
 			display: block;
+		}
+
+		.card {
+			text-align: left;
 		}
 
 		#about {
@@ -357,8 +368,7 @@ footer p {
 	and (min-width: 1024px) {
 	    #splash {
 			height: 110vh;
-			background: url(../img/splash-bg-desktop.jpg);
-			align-items: center;
+			background-image: url(../img/splash-bg-desktop.jpg);
 		}
 
 		#ic1 h1 {
@@ -387,7 +397,7 @@ footer p {
 		.rows {
 			padding-top: 50px;
 			padding-bottom: 50px;
-			justify-content: space-around;
+			justify-content: space-between;
 			flex-direction: row;
 
 		}
@@ -411,7 +421,6 @@ footer p {
 		}
 
 		#text1 h2 {
-			font-size: 28px;
 			margin-bottom: 0;
 			display: block;
 		}
@@ -432,10 +441,18 @@ footer p {
 
 		.card:last-of-type {
 			display: block;
-		}	
+		}
+
+		.card {
+			text-align: left;
+		}
 
 		#about {
 			width: 450px;
+		}
+
+		.textrow {
+			justify-content: center;
 		}
 
 		.contact {
