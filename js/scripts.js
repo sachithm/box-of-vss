@@ -2,6 +2,7 @@ console.log("This ones for you Sachi");
 
 // Scroll reveal
 window.sr = ScrollReveal();
+
 sr.reveal(".rows");
 sr.reveal(
   ".card",
@@ -11,6 +12,7 @@ sr.reveal(
   100
 );
 
+
 // Smooth anchor jump
 var scroll = new SmoothScroll('a[href*="#"]');
 
@@ -18,7 +20,10 @@ var scroll = new SmoothScroll('a[href*="#"]');
 var splashInnerContentContainer = document.querySelectorAll("#ic1")[0];
 var splashInnerContentContainerHeight = splashInnerContentContainer.scrollHeight;
 var splashInnerContentContainerDistanceFromTop = getPosition(splashInnerContentContainer).y;
+
 var fixedHeader = document.querySelectorAll("#fixed-header")[0];
+var fixedHeaderMobile = document.querySelectorAll(".fixed-header-mobile")[0];
+
 
 // This function gets the distance of an element from the top
 function getPosition(element) {
@@ -61,5 +66,29 @@ document.addEventListener("scroll", function(event) {
     if (fixedHeader.classList.contains("show")) {
       fixedHeader.classList.remove("show");
     }
-  }
+  };
+
+  if (scrollTop >= splashInnerContentContainerHeight + splashInnerContentContainerDistanceFromTop && !fixedHeaderMobile.classList.contains("show")) {
+    fixedHeaderMobile.classList.add("show");
+  } else if (scrollTop < splashInnerContentContainerHeight + splashInnerContentContainerDistanceFromTop && fixedHeaderMobile.classList.contains("show")) {
+    fixedHeaderMobile.classList.remove("show")
+    if (!$(".menu").hasClass("hidden")) {
+      $(".hamburger").removeClass("hidden");
+      $(".cross").addClass("hidden");
+      $(".menu").addClass("hidden");
+    };
+  };
+});
+
+
+$(".hamburger").on("click", function() {
+  $(".cross").removeClass("hidden");
+  $(".hamburger").addClass("hidden");
+  $(".menu").removeClass("visuallyhidden");
+});
+
+$(".cross").on("click", function() {
+  $(".hamburger").removeClass("hidden");
+  $(".cross").addClass("hidden");
+  $(".menu").addClass("visuallyhidden");
 });
