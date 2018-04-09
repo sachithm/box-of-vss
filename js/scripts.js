@@ -72,10 +72,10 @@ document.addEventListener("scroll", function(event) {
     fixedHeaderMobile.classList.add("show");
   } else if (scrollTop < splashInnerContentContainerHeight + splashInnerContentContainerDistanceFromTop && fixedHeaderMobile.classList.contains("show")) {
     fixedHeaderMobile.classList.remove("show")
-    if (!$(".menu").hasClass("hidden")) {
+    if (!$(".nav-menu").hasClass("visuallyhidden")) {
       $(".hamburger").removeClass("hidden");
       $(".cross").addClass("hidden");
-      $(".menu").addClass("hidden");
+      $(".nav-menu").addClass("visuallyhidden");
     };
   };
 });
@@ -84,11 +84,11 @@ document.addEventListener("scroll", function(event) {
 $(".hamburger").on("click", function() {
   $(".cross").removeClass("hidden");
   $(".hamburger").addClass("hidden");
-  $(".menu").removeClass("visuallyhidden");
+  $(".nav-menu").removeClass("visuallyhidden");
 });
 
 $(".cross").on("click", function() {
   $(".hamburger").removeClass("hidden");
   $(".cross").addClass("hidden");
-  $(".menu").addClass("visuallyhidden");
+  $(".nav-menu").addClass("visuallyhidden");
 });
