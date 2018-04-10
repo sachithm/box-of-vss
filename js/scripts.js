@@ -80,15 +80,20 @@ document.addEventListener("scroll", function(event) {
   };
 });
 
+$(".menu").toggle();
 
 $(".hamburger").on("click", function() {
-  $(".cross").removeClass("hidden");
-  $(".hamburger").addClass("hidden");
+  $(".menu").fadeToggle(600, function() {
+    $(".cross").removeClass("hidden");
+    $(".hamburger").addClass("hidden");
+  });
   $(".nav-menu").removeClass("visuallyhidden");
 });
 
 $(".cross").on("click", function() {
-  $(".hamburger").removeClass("hidden");
-  $(".cross").addClass("hidden");
   $(".nav-menu").addClass("visuallyhidden");
+  $(".menu").fadeToggle(600, function() {
+    $(".hamburger").removeClass("hidden");
+    $(".cross").addClass("hidden");
+  });
 });
