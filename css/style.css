@@ -137,6 +137,11 @@ h2 {
   position: fixed;
 }
 
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .nav-bar {
   background: orange;
   transition: margin 0.3s ease-in-out;

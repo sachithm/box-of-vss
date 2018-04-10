@@ -86,14 +86,14 @@ $(".hamburger").on("click", function() {
   $(".menu").animate({width: 'toggle'}, 400, "swing", function() {
     $(".cross").removeClass("hidden");
     $(".hamburger").addClass("hidden");
+    $(".nav-menu").delay(400).removeClass("visuallyhidden");
   });
-  $(".nav-menu").removeClass("visuallyhidden");
 });
 
 $(".cross").on("click", function() {
-  $(".nav-menu").addClass("visuallyhidden");
   $(".menu").animate({width: 'toggle'}, 400, "swing", function() {
     $(".hamburger").removeClass("hidden");
     $(".cross").addClass("hidden");
+    $(".nav-menu").addClass("visuallyhidden");
   });
 });
