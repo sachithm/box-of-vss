@@ -86,8 +86,9 @@ $(".hamburger").on("click", function() {
   $(".menu").animate({width: 'toggle'}, 400, "swing", function() {
     $(".cross").removeClass("hidden");
     $(".hamburger").addClass("hidden");
-    $(".nav-menu").delay(400).removeClass("visuallyhidden");
+    $(".nav-menu").removeClass("visuallyhidden");
   });
+  $(".nav-text").delay(100).fadeIn(300);
 });
 
 $(".cross").on("click", function() {
@@ -96,4 +97,5 @@ $(".cross").on("click", function() {
     $(".cross").addClass("hidden");
     $(".nav-menu").addClass("visuallyhidden");
   });
+  $(".nav-text").fadeOut(300);
 });
