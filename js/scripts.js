@@ -83,7 +83,7 @@ document.addEventListener("scroll", function(event) {
 $(".menu").toggle();
 
 $(".hamburger").on("click", function() {
-  $(".menu").fadeToggle(600, function() {
+  $(".menu").animate({width: 'toggle'}, 400, "swing", function() {
     $(".cross").removeClass("hidden");
     $(".hamburger").addClass("hidden");
   });
@@ -92,7 +92,7 @@ $(".hamburger").on("click", function() {
 
 $(".cross").on("click", function() {
   $(".nav-menu").addClass("visuallyhidden");
-  $(".menu").fadeToggle(600, function() {
+  $(".menu").animate({width: 'toggle'}, 400, "swing", function() {
     $(".hamburger").removeClass("hidden");
     $(".cross").addClass("hidden");
   });
