@@ -80,22 +80,22 @@ document.addEventListener("scroll", function(event) {
   };
 });
 
-$(".menu").toggle();
+$(".menu").toggle(false);
 
 $(".hamburger").on("click", function() {
   $(".menu").animate({width: 'toggle'}, 400, "swing", function() {
-    $(".cross").removeClass("hidden");
-    $(".hamburger").addClass("hidden");
     $(".nav-menu").removeClass("visuallyhidden");
   });
+  $(".cross").removeClass("hidden");
+  $(".hamburger").addClass("hidden");
   $(".nav-text").delay(100).fadeIn(300);
 });
 
 $(".cross").on("click", function() {
   $(".menu").animate({width: 'toggle'}, 400, "swing", function() {
-    $(".hamburger").removeClass("hidden");
-    $(".cross").addClass("hidden");
     $(".nav-menu").addClass("visuallyhidden");
   });
+  $(".hamburger").removeClass("hidden");
+  $(".cross").addClass("hidden");
   $(".nav-text").fadeOut(300);
 });
