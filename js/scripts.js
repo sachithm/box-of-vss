@@ -140,11 +140,14 @@ $(".nav-menu").click(function () {
   $(".menu").slideToggle("fast", function () {
     $("body").toggleClass("body-scroll");
     $(that).removeClass("click");
+    $(".nav-text", that).removeClass("text-click")
   });
   $(".cross").hide();
   $(".hamburger").show();
   $(".header-black-overlay").fadeOut();
   $(this).addClass("click");
+
+  $(".nav-text", this).addClass("text-click")
 });
 
 $(".inpoop").on("focusin", function() {

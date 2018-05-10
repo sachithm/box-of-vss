@@ -219,6 +219,10 @@ h2 {
   background-color: #0ab2f0;
 }
 
+.text-click {
+  color: white;
+}
+
 .body-scroll {
   overflow: hidden;
 }
