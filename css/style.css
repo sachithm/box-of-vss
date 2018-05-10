@@ -537,6 +537,7 @@ footer p {
     font-size: 18px;
     text-transform: uppercase;
     color: #1f2628;
+    font-weight: 600;
   }
 
   .nav-desk:hover {
