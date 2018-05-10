@@ -80,22 +80,79 @@ document.addEventListener("scroll", function(event) {
   };
 });
 
-$(".menu").toggle(false);
+// $(".hamburger").on("click", function() {
+//   $(".menu").animate({width: 'toggle'}, 400, "swing", function() {
+//     $(".nav-menu").removeClass("visuallyhidden");
+//   });
+//   $(".cross").removeClass("hidden");
+//   $(".hamburger").addClass("hidden");
+//   $(".nav-text").delay(100).fadeIn(300);
+// });
+
+// $(".cross").on("click", function() {
+//   $(".menu").animate({width: 'toggle'}, 400, "swing", function() {
+//     $(".nav-menu").addClass("visuallyhidden");
+//   });
+//   $(".hamburger").removeClass("hidden");
+//   $(".cross").addClass("hidden");
+//   $(".nav-text").fadeOut(300);
+// });
+
 
 $(".hamburger").on("click", function() {
-  $(".menu").animate({width: 'toggle'}, 400, "swing", function() {
-    $(".nav-menu").removeClass("visuallyhidden");
-  });
-  $(".cross").removeClass("hidden");
-  $(".hamburger").addClass("hidden");
-  $(".nav-text").delay(100).fadeIn(300);
+  $(".menu").slideToggle();
+  $(".cross").show();
+  $(".hamburger").hide();
+  $("body").addClass("body-scroll")
+  $(".header-black-overlay").fadeIn();
 });
 
 $(".cross").on("click", function() {
-  $(".menu").animate({width: 'toggle'}, 400, "swing", function() {
-    $(".nav-menu").addClass("visuallyhidden");
-  });
-  $(".hamburger").removeClass("hidden");
-  $(".cross").addClass("hidden");
-  $(".nav-text").fadeOut(300);
+  $(".menu").slideToggle();
+  $(".cross").hide();
+  $(".hamburger").show();
+  $("body").removeClass("body-scroll")
+  $(".header-black-overlay").fadeOut();
 });
+
+$(".header-black-overlay").on("touchstart", function () {
+  $(".menu").slideUp("fast", "swing", function () {
+    $(".menu").hide();
+  });
+  $("body").removeClass("body-scroll");
+  $(".header-black-overlay").fadeOut();
+  $(".hamburger").show();
+  $(".cross").hide();
+});
+
+// Touch listener makes sure above is correctly selected
+$(".fixed-header-mobile").on(
+  "touchstart",
+  function (e) {
+    e.stopPropagation();
+  }
+);
+
+var that;
+// Closes menu when an option is picked
+$(".nav-menu").click(function () {
+  that = $(this);
+  $(".menu").slideToggle("fast", function () {
+    $("body").toggleClass("body-scroll");
+    $(that).removeClass("click");
+  });
+  $(".cross").hide();
+  $(".hamburger").show();
+  $(".header-black-overlay").fadeOut();
+  $(this).addClass("click");
+});
+
+$(".inpoop").on("focusin", function() {
+  $(this).addClass("inpoop-click")
+  $(this).addClass("placeholder-click");
+})
+
+$(".inpoop").on("focusout", function() {
+  $(this).removeClass("inpoop-click")
+  $(this).removeClass("placeholder-click");
+})
