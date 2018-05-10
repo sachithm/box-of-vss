@@ -184,7 +184,7 @@ h2 {
 }
 
 .menu {
-  z-index: 99; 
+  z-index: 2; 
   font-weight:bold;
   text-align: center;
   margin-top: 65px;
@@ -199,6 +199,7 @@ h2 {
 .nav-text {
   color: #1f2628;
   font-weight: 600;
+  font-size: 19px
 }
 
 .nav-menu {
@@ -268,7 +269,7 @@ h2 {
 
 #ic1 h1 {
   font-size: 24px;
-  color: #149edb;
+  color: #0ab2f0;
   text-transform: uppercase;
   text-align: center;
   line-height: 1;
@@ -575,6 +576,10 @@ footer p {
     border-right: 1px solid grey;
     margin-right: 10px;
     padding-bottom: 0;
+  }
+
+  a:hover, a:active {
+    color: #0ab2f0;
   }
 
   /*________________________________________________*/
