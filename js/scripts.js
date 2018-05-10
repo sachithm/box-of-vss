@@ -72,11 +72,6 @@ document.addEventListener("scroll", function(event) {
     fixedHeaderMobile.classList.add("show");
   } else if (scrollTop < splashInnerContentContainerHeight + splashInnerContentContainerDistanceFromTop && fixedHeaderMobile.classList.contains("show")) {
     fixedHeaderMobile.classList.remove("show")
-    if (!$(".nav-menu").hasClass("visuallyhidden")) {
-      $(".hamburger").removeClass("hidden");
-      $(".cross").addClass("hidden");
-      $(".nav-menu").addClass("visuallyhidden");
-    };
   };
 });
 
