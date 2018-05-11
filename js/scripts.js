@@ -94,21 +94,29 @@ document.addEventListener("scroll", function(event) {
 // });
 
 
-$(".hamburger").on("click", function() {
-  $(".menu").slideToggle();
-  $(".cross").show();
-  $(".hamburger").hide();
-  $("body").addClass("body-scroll")
-  $(".header-black-overlay").fadeIn();
-});
+// $(".hamburger").on("click", function() {
+//   $(".menu").slideToggle();
+//   $(".cross").show();
+//   $(".hamburger").hide();
+//   $("body").addClass("body-scroll")
+//   $(".header-black-overlay").fadeIn();
+// });
 
-$(".cross").on("click", function() {
+// $(".cross").on("click", function() {
+//   $(".menu").slideToggle();
+//   $(".cross").hide();
+//   $(".hamburger").show();
+//   $("body").removeClass("body-scroll")
+//   $(".header-black-overlay").fadeOut();
+// });
+
+$(".nav-icon").on("click", function() {
   $(".menu").slideToggle();
-  $(".cross").hide();
-  $(".hamburger").show();
-  $("body").removeClass("body-scroll")
-  $(".header-black-overlay").fadeOut();
-});
+  $(".cross").toggle();
+  $(".hamburger").toggle();
+  $("body").toggleClass("body-scroll");
+  $(".header-black-overlay").fadeToggle();
+})
 
 $(".header-black-overlay").on("touchstart", function () {
   $(".menu").slideUp("fast", "swing", function () {
