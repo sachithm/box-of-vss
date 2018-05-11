@@ -140,8 +140,8 @@ var that;
 // Closes menu when an option is picked
 $(".nav-menu").click(function () {
   that = $(this);
-  $(".menu").slideToggle("fast", function () {
-    $("body").toggleClass("body-scroll");
+  $(".menu").slideUp("fast", function () {
+    $("body").removeClass("body-scroll");
     $(that).removeClass("click");
     $(".nav-text", that).removeClass("text-click")
   });
@@ -152,6 +152,18 @@ $(".nav-menu").click(function () {
 
   $(".nav-text", this).addClass("text-click")
 });
+
+$(".nav-img").click(function() {
+  that = $(this);
+  $(".menu").slideUp("fast", function () {
+    $("body").removeClass("body-scroll");
+    $(that).removeClass("click");
+    $(".nav-text", that).removeClass("text-click")
+  });
+  $(".cross").hide();
+  $(".hamburger").show();
+  $(".header-black-overlay").fadeOut();
+})
 
 $(".inpoop").on("focusin", function() {
   $(this).addClass("inpoop-click")
